@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">LineNotifyClient</string>
-
     <string name="default_line_notify_server_url">https://notify-api.line.me/</string>
-
     <string name="prefs_line_notify_token">prefs_line_notify_token</string>
     <string name="prefs_line_notify_server_url">prefs_line_notify_server_url</string>
+    <string name="prefs_test">prefs_licenses</string>
 </resources>
