@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="LINE Notify Settings">
+
+        <EditTextPreference
+            android:dialogTitle="Input your LINE Notify token"
+            android:key="@string/prefs_line_notify_token"
+            android:summary="Your LINE Notify token"
+            android:title="LINE Notify Token (*Required)" />
+
+        <EditTextPreference
+            android:defaultValue="@string/default_line_notify_server_url"
+            android:dialogTitle="Input custom server url"
+            android:key="@string/prefs_line_notify_server_url"
+            android:summary="For custom LINE Notify server"
+            android:title="Server URL (Optional)" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
