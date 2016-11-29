@@ -50,6 +50,7 @@ public class SendActivity extends Activity {
     @Override
     public void finish() {
         super.finish();
+        // Disable activity animation
         overridePendingTransition(0, 0);
     }
 
@@ -110,13 +111,24 @@ public class SendActivity extends Activity {
 
     private void onResponse(Call<LineNotifyService.NotifyResponse> call,
                             Response<LineNotifyService.NotifyResponse> response) {
-        Toast.makeText(this, "Success LineNotify", Toast.LENGTH_SHORT).show();
+        if (response.isSuccessful()) {
+            showSuccessToast();
+        } else {
+            showFailedToast();
+        }
         finish();
     }
 
-
     private void onFailure(Call<LineNotifyService.NotifyResponse> call, Throwable t) {
-        Toast.makeText(this, "Failed to send LineNotify.", Toast.LENGTH_SHORT).show();
+        showFailedToast();
         finish();
+    }
+
+    private void showSuccessToast() {
+        Toast.makeText(this, "Success notify", Toast.LENGTH_SHORT).show();
+    }
+
+    private void showFailedToast() {
+        Toast.makeText(this, "Failed notify", Toast.LENGTH_SHORT).show();
     }
 }
